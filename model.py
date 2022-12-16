@@ -1,5 +1,5 @@
-first_number=0
-second_number=0
+first_number=None
+second_number=None
 operation=''
 result=0
 
