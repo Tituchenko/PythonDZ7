@@ -9,7 +9,7 @@ hasSteples=False
 formulaStringFull=''
 formulaStringFromInput=''
 
-def reset_error():
+def reset_error(): # сбросим ошибки
     global Error
     Error=''
 
@@ -25,7 +25,7 @@ def get_formulaStringFromInput():
     global formulaStringFromInput
     return formulaStringFromInput
 
-def Steples():
+def Steples(): # загружаем в global индексы начала и конца скобок, проверяем корректность
     global formulaString
     global formulaStringFull
     global Error
@@ -67,7 +67,7 @@ def Steples():
     return True
 
 
-def checkSteples():
+def checkSteples(): # А есть ли скобки в формуле вообще, проверяем чтобы обе
     global formulaString
     global hasSteples
     if '(' in formulaString:
@@ -100,7 +100,7 @@ def get_result():
     global numbers
     return numbers[0]
 
-def killSteples():
+def killSteples(): # меняем в строке то что в скобках на значение
     global formulaString
     global formulaStringFull
     global numbers
@@ -132,7 +132,7 @@ def cleanFormula(f:str) -> str:
     f=f.replace('++', '+')
     return f
 
-def reset_numbers():
+def reset_numbers(): #сбросим значения только не 0 - там обычно храниться результат прошлых вычислений
     global numbers
     global operations
     operations.clear()
@@ -143,7 +143,7 @@ def reset_numbers():
     if not temp==None:
         numbers.append(temp)
 
-def getFormula(formula : str):
+def getFormula(formula : str): # разобьем строку на два списка - операции и элементы, небольшие проверки корректности
     global operations
     global Error
     global Finish

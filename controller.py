@@ -3,7 +3,7 @@ import model
 import parser
 import logger
 
-def input_formula():
+def input_formula(): #проверка ввода - если формула идем дальше, если симво идем по семинару
     parser.reset_error()
     tips=''
     if not parser.get_formulaString()=='':
@@ -29,7 +29,7 @@ def input_formula():
 
 
 
-def input_first(number=None):
+def input_first(number=None): # сделаем передачу значения потому как пользуемся input_formula
     if number==None:
         number=view.input_number()
     model.set_first (number)
@@ -48,7 +48,7 @@ def input_operation(oper=''):
         oper=view.input_operation(model.get_first())
     if model.get_operation()=='':
         model.set_operation(oper)
-def solution_formula():
+def solution_formula(): # передаем индексы операций и значений над которыми будем выполнять действия
     operations=parser.get_operation()
     numbers=parser.get_numbers()
     while (len(operations)>0):
